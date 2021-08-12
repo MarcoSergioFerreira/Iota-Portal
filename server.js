@@ -4,10 +4,10 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static('./dist/Iota-Portal'));
+app.use(express.static('./dist/iota-portal'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/Iota-Portal/'}),
+    res.sendFile('index.html', {root: 'dist/iota-portal/'}),
 );
 
 // Start the app by listening on the default Heroku port
