@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static('./dist/Iota-Portal'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/ExploreInsightsAngular/'}),
+    res.sendFile('index.html', {root: 'dist/Iota-Portal/'}),
 );
 
 // Start the app by listening on the default Heroku port
