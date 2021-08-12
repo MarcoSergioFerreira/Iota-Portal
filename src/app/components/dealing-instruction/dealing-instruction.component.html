@@ -1,0 +1,28 @@
+<form *ngFor="let fundForm of fundForms; index as fundFormIndex" [formGroup]=fundForm>
+    
+    <label for="funds">Choose a fund:</label>
+    
+    <select (change)="selectFund($any($event.target).value, fundFormIndex)" name="funds" id="funds" formControlName=fundName>
+        <option *ngFor="let fund of fundList">
+            {{ fund.fundName }}
+        </option>
+    </select>
+
+    <select *ngIf="fundForms[fundFormIndex].value['fundName'] !== '' " name="instructions" id="instructions" formControlName=instruction>
+        <option *ngFor="let instruction of instructions">
+            {{ instruction }}
+        </option>
+    </select>
+
+    <input *ngIf="fundForms[fundFormIndex].value['instruction'] !== '' " formControlName="amount" type="number" placeholder="Amount">
+
+    <input *ngIf="fundForms[fundFormIndex].value['amount'] !== 0 " formControlName="currencySettlement" type="text" placeholder="Settlement Currency">
+
+    <button *ngIf="fundForms[fundFormIndex].value['currencySettlement'] !== '' " (click)="addToPDF(fundFormIndex)">Add to PDF</button>
+
+    <!-- <input *ngIf="fundForms[fundFormIndex].value['amount'] !== '' " formControlName="currencySettlement" type="text" placeholder="Settlement Currency"> -->
+    
+</form>
+<br>
+<button *ngIf="fundForms.length < 7" (click)="addFund()">Add Fund</button>
+<app-pdf></app-pdf>

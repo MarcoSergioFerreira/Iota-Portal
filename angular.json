@@ -28,7 +28,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+                "output": "/assets/",
+                "ignore": [
+                  "node_modules/ngx-extended-pdf-viewer/assets/inline-locale-files/",
+                  "node_modules/ngx-extended-pdf-viewer/assets/additional-locale/"
+                ]
+              }
             ],
             "styles": [
               "src/styles.scss"
