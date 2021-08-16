@@ -1,0 +1,15 @@
+<mat-toolbar color=accent class="topnav" fxLayout=row fxLayoutAlign="space-between center">
+
+    <!-- Logo -->
+    <img fxHide.gt-md class="topnav__logo" src="../../../assets/images/iota-logo.png" alt="Iota Investment Services">
+    
+    <h1>{{pageName}}</h1>
+    
+    <!-- Menu Icon -->
+    <mat-icon class="topnav__icon" color=primary *ngIf="!(navbarService.showSidenav$ | async)"
+    (click)="navbarService.toggleSidenav(true)">menu</mat-icon>
+
+    <!-- Logo -->
+    <img *ngIf="minimizeSidenav" class="topnav__logo" src="../../../assets/images/iota-logo.png" alt="Iota Investment Services">
+
+</mat-toolbar>
