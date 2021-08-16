@@ -1,1 +1,175 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.m1 {
+
+    &--t {
+        margin-top: 1rem;
+    }
+
+    &--b {
+        margin-bottom: 1rem;
+    }
+
+    &--l {
+        margin-left: 1rem;
+    }
+
+    &--r {
+        margin-right: 1rem;
+    }
+
+    &--x {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &--y {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    &--a {
+        margin: 1rem;
+    }
+
+}
+
+.m2 {
+
+    &--t {
+        margin-top: 2rem;
+    }
+
+    &--b {
+        margin-bottom: 2rem;
+    }
+
+    &--l {
+        margin-left: 2rem;
+    }
+
+    &--r {
+        margin-right: 2rem;
+    }
+
+    &--x {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &--y {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    &--a {
+        margin: 2rem;
+    }
+
+}
+
+.m3 {
+
+    &--t {
+        margin-top: 3rem;
+    }
+
+    &--b {
+        margin-bottom: 3rem;
+    }
+
+    &--l {
+        margin-left: 3rem;
+    }
+
+    &--r {
+        margin-right: 3rem;
+    }
+
+    &--x {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    &--y {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    &--a {
+        margin: 3rem;
+    }
+
+}
+
+.m4 {
+
+    &--t {
+        margin-top: 4rem;
+    }
+
+    &--b {
+        margin-bottom: 4rem;
+    }
+
+    &--l {
+        margin-left: 4rem;
+    }
+
+    &--r {
+        margin-right: 4rem;
+    }
+
+    &--x {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    &--y {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    &--a {
+        margin: 4rem;
+    }
+
+}
+
+.m5 {
+
+    &--t {
+        margin-top: 5rem;
+    }
+
+    &--b {
+        margin-bottom: 5rem;
+    }
+
+    &--l {
+        margin-left: 5rem;
+    }
+
+    &--r {
+        margin-right: 5rem;
+    }
+
+    &--x {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    &--y {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    &--a {
+        margin: 5rem;
+    }
+
+}

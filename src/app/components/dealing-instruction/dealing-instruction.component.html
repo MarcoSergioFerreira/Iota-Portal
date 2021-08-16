@@ -1,28 +1,60 @@
-<form *ngFor="let fundForm of fundForms; index as fundFormIndex" [formGroup]=fundForm>
-    
-    <label for="funds">Choose a fund:</label>
-    
-    <select (change)="selectFund($any($event.target).value, fundFormIndex)" name="funds" id="funds" formControlName=fundName>
-        <option *ngFor="let fund of fundList">
-            {{ fund.fundName }}
-        </option>
-    </select>
+<section fxLayout=row fxLayoutAlign="space-around">
 
-    <select *ngIf="fundForms[fundFormIndex].value['fundName'] !== '' " name="instructions" id="instructions" formControlName=instruction>
-        <option *ngFor="let instruction of instructions">
-            {{ instruction }}
-        </option>
-    </select>
+    <!-- Form Section -->
+    <article class="m1--a" fxFlex=45 fxLayout=column fxLayoutAlign=flex-start>
 
-    <input *ngIf="fundForms[fundFormIndex].value['instruction'] !== '' " formControlName="amount" type="number" placeholder="Amount">
+        <form fxLayout=row fxLayoutAlign=spcace-between *ngFor="let fundForm of fundForms; index as fundFormIndex"
+            [formGroup]=fundForm>
 
-    <input *ngIf="fundForms[fundFormIndex].value['amount'] !== 0 " formControlName="currencySettlement" type="text" placeholder="Settlement Currency">
+            <!-- Fund Name -->
+            <mat-form-field>
+                <mat-label>Choose a fund:</mat-label>
+                <mat-select (change)="selectFund($any($event.target).value, fundFormIndex)" name="funds" id="funds"
+                    formControlName=fundName>
+                    <mat-option *ngFor="let fund of fundList" [value]=fund.fundName>
+                        {{ fund.fundName }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-    <button *ngIf="fundForms[fundFormIndex].value['currencySettlement'] !== '' " (click)="addToPDF(fundFormIndex)">Add to PDF</button>
+            <!-- Instruction -->
+            <mat-form-field name="instructions">
+                <mat-label>Buy / Sell / Switch</mat-label>
+                <mat-select [disabled]="fundForms[fundFormIndex].value['fundName'] === '' " id="instructions" formControlName=instruction>
+                    <mat-option *ngFor="let instruction of instructions" [value]=instruction>
+                        {{ instruction }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-    <!-- <input *ngIf="fundForms[fundFormIndex].value['amount'] !== '' " formControlName="currencySettlement" type="text" placeholder="Settlement Currency"> -->
-    
-</form>
+            <!-- Amount -->
+            <mat-form-field>
+                <mat-label>Amount</mat-label>
+                <input [disabled]="fundForms[fundFormIndex].value['instruction'] === '' " matInput formControlName="amount">
+            </mat-form-field>
+
+            <!-- Settlement Currency -->
+            <mat-form-field>
+                <mat-label>Settlement Currency</mat-label>
+                <input [disabled]="fundForms[fundFormIndex].value['amount'] === 0 " matInput formControlName="currencySettlement">
+            </mat-form-field>
+
+            <!-- Add fund button -->
+            <button mat-button [disabled]="fundForms[fundFormIndex].value['currencySettlement'] === '' "
+                (click)="addToPDF(fundFormIndex)">Add to PDF</button>
+
+
+            <!-- <input *ngIf="fundForms[fundFormIndex].value['amount'] !== '' " formControlName="currencySettlement" type="text" placeholder="Settlement Currency"> -->
+
+        </form>
+    </article>
+
+    <!-- Pdf Section -->
+    <article class="m1--a" fxFlex=55>
+        <app-pdf></app-pdf>
+    </article>
+
+</section>
+
 <br>
 <button *ngIf="fundForms.length < 7" (click)="addFund()">Add Fund</button>
-<app-pdf></app-pdf>

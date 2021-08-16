@@ -50,7 +50,7 @@ export class DealingInstructionComponent implements OnInit {
       amount: new FormControl(0),
       limitPrice: new FormControl(''),
     }))
-    console.log(this.fundForms)
+    console.log("🚀 ~ file: dealing-instruction.component.ts ~ line 42 ~ DealingInstructionComponent ~ addFund ~ this.fundForms", this.fundForms)
   }
 
   public selectFund(fundName: string, fundGroupIndex: number): void {
