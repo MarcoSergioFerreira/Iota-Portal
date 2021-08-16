@@ -1,6 +1,23 @@
+@import '../../../variables.scss';
+
 .topnav {
+
+    height: 70px;
+
+    &::ng-deep.mat-icon:hover {
+        color: $iota-brown !important;
+    }
 
     &__logo {
         width: 60px;
+    }
+
+    &__icon {
+
+        &:hover {
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: $iota-beige;
+        }
     }
 }

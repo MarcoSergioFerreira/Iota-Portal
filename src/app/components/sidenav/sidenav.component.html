@@ -1,17 +1,19 @@
-<div class="sidenav__header" fxLayout="row"
-    [fxLayoutAlign]="!minimizeSidenavToggle ? 'space-between center' : 'center'">
+<div class="sidenav__header"
+    fxLayout="row"
+    [fxLayoutAlign]="!minimizeSidenavToggle ? 'space-between center' : 'center center'">
 
     <!-- logo -->
-    <img class="sidenav__logo" *ngIf="!minimizeSidenavToggle" routerLink="/"
+    <img class="sidenav__logo m1--y" *ngIf="!minimizeSidenavToggle" routerLink="/"
         src="../../../assets/images/iota-logo.png" alt="Explore Insights">
 
     <!-- Close icon -->
-    <mat-icon class="sidenav__icon" fxShow.lt-md fxHide.gt-md aria-hidden="false"
+    <mat-icon class="sidenav__icon m1--y" fxShow.lt-md fxHide.gt-md aria-hidden="false"
         (click)="closeSidenav()">close</mat-icon>
 
     <!-- Minimize icon -->
-    <mat-icon fxShow.gt-md fxHide.lt-md (click)="toggleMinimizeSidenav()"
-        class="sidenav-icon" aria-hidden="false" color="accent">
+    <mat-icon
+        fxShow.gt-md fxHide.lt-md (click)="toggleMinimizeSidenav()"
+        class="sidenav__icon m1--y" aria-hidden="false">
         {{!minimizeSidenavToggle ? 'chevron_left': 'chevron_right'}}
     </mat-icon>
 </div>
@@ -22,7 +24,7 @@
     <mat-list-item
         [ngClass]="[!minimizeSidenavToggle ? 'sidenav__list-item-container' : 'sidenav__list-item-container--minimized']"
         [fxLayoutAlign]="!minimizeSidenavToggle ? 'start' : 'center'" routerLink='/dealing-instructions'>
-        <mat-icon color="accent" aria-hidden="false">request_quote</mat-icon>
+        <mat-icon class="sidenav__icon" aria-hidden="false">request_quote</mat-icon>
         <span mat-list-item *ngIf="!minimizeSidenavToggle" class="sidenav__list-item">Dealing Instructions</span>
     </mat-list-item>
 
@@ -30,7 +32,7 @@
     <mat-list-item
         [ngClass]="[!minimizeSidenavToggle ? 'sidenav__list-item-container' : 'sidenav__list-item-container--minimized']"
         [fxLayoutAlign]="!minimizeSidenavToggle ? 'start' : 'center'" (click)="logout()">
-        <mat-icon color="accent" aria-hidden="false">logout</mat-icon>
+        <mat-icon class="sidenav__icon" aria-hidden="false">logout</mat-icon>
         <span mat-list-item *ngIf="!minimizeSidenavToggle" class="sidenav__list-item">Log Out</span>
     </mat-list-item>
 </mat-nav-list>

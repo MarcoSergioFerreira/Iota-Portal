@@ -1,11 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import './variables.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .m1 {
-
     &--t {
         margin-top: 1rem;
     }
@@ -35,11 +39,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     &--a {
         margin: 1rem;
     }
-
 }
 
 .m2 {
-
     &--t {
         margin-top: 2rem;
     }
@@ -69,11 +71,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     &--a {
         margin: 2rem;
     }
-
 }
 
 .m3 {
-
     &--t {
         margin-top: 3rem;
     }
@@ -103,11 +103,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     &--a {
         margin: 3rem;
     }
-
 }
 
 .m4 {
-
     &--t {
         margin-top: 4rem;
     }
@@ -137,11 +135,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     &--a {
         margin: 4rem;
     }
-
 }
 
 .m5 {
-
     &--t {
         margin-top: 5rem;
     }
@@ -171,7 +167,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     &--a {
         margin: 5rem;
     }
-
 }
 
 .w100 {
@@ -184,4 +179,50 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .w25 {
     width: 25%;
+}
+
+.w250px {
+    width: 250px;
+}
+
+.w60px {
+    width: 60px !important;
+}
+
+.h100vh {
+    height: 100vh;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.bg {
+
+    &--iota-beige {
+        background-color: $iota-beige;
+    }
+
+    &--iota-brown {
+        background-color: $iota-brown;
+    }
+
+    &--iota-grey {
+        background-color: $iota-grey;
+    }
+}
+
+.tc {
+
+    &--iota-beige {
+        color: $iota-beige;
+    }
+
+    &--iota-brown {
+        color: $iota-brown;
+    }
+
+    &--iota-grey {
+        color: $iota-grey;
+    }
 }

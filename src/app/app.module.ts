@@ -6,16 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+// Material
+import { MaterialModule } from './material.module';
+
 // PDF
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
-
-// Angular Material
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 
 // Components
 import { AppComponent } from './app.component';
@@ -40,14 +35,7 @@ import { TopnavComponent } from './components/topnav/topnav.component';
     ReactiveFormsModule,
     NgxExtendedPdfViewerModule,
     FlexLayoutModule,
-
-    // TODO: Move Material Modules to separate "material.module.ts"
-    MatInputModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatListModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

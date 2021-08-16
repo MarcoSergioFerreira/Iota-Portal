@@ -1,21 +1,21 @@
-.sidenav {
+@import "../../../variables.scss";
 
-    &__list-item {
-        // width: 100%;
-        // color: lightgreen;
-        // background-color: purple;
+.sidenav {
+    &__header {
+        height: 70px;
+
+        &::ng-deep.mat-icon:hover {
+            color: $iota-beige !important;
+        }
     }
 
     &__icon {
+        color: $iota-grey !important;
 
         &:hover {
             border-radius: 4px !important;
-            background-color: blue !important;
+            background-color: $iota-grey !important;
             cursor: pointer !important;
-
-            &::ng-deep.mat-icon {
-                color: white !important;
-            }
         }
     }
 
@@ -24,6 +24,69 @@
 
         &:hover {
             cursor: pointer;
+        }
+    }
+
+    // Angular Material overriding
+
+    &__list-item-container {
+        &::ng-deep.mat-list-item-content {
+            width: 100%;
+            color: $iota-brown !important;
+
+            &::ng-deep.mat-icon {
+                color: $iota-brown !important;
+            }
+        }
+
+        &:hover ::ng-deep.mat-list-item-content {
+            width: 100%;
+            background-color: $iota-grey;
+            color: $iota-beige !important;
+
+            &::ng-deep.mat-icon {
+                color: $iota-beige !important;
+            }
+        }
+
+        &--minimized ::ng-deep.mat-list-item-content {
+            width: initial;
+            &:hover {
+                border-radius: 4px;
+                background-color: $iota-grey;
+                cursor: pointer;
+
+                &::ng-deep.mat-icon {
+                    color: $iota-beige !important;
+                }
+            }
+        }
+    }
+
+    &__list-item-container.active {
+        & ::ng-deep.mat-list-item-content {
+            width: 100%;
+            // border-radius: 4px;
+            background-color: $iota-grey;
+            // cursor: pointer;
+            color: $iota-beige !important;
+
+            &::ng-deep.mat-icon {
+                color: $iota-beige !important;
+            }
+        }
+    }
+
+    &__list-item-container--minimized.active {
+        & ::ng-deep.mat-list-item-content {
+            // width: 100%;
+            border-radius: 4px;
+            background-color: $iota-grey;
+            cursor: pointer;
+
+            &::ng-deep.mat-icon {
+                color: $iota-beige !important;
+            }
         }
     }
 }

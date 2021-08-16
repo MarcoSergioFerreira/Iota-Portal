@@ -1,7 +1,9 @@
 
-<mat-sidenav-container class="sidenav__container" (backdropClick)="closeSidenav()" [autosize]="autosize">
+<mat-sidenav-container class="h100vh" (backdropClick)="closeSidenav()" [autosize]="autosize">
     <mat-sidenav #snav 
         ngClass.lt-md="w100"
+        [ngClass.gt-md]="minimizeSideNav ? 'w60px' : 'w250px'"
+        class="bg--iota-beige"
         (mobileQuery.matches)="mode = 'side'"
         [mode]="(mediaQueryService.isMobile$ | async) || (mediaQueryService.isTablet$ | async) ? 'over' : 'side'"
         [opened]="navbarService.showSidenav$ | async"
@@ -9,8 +11,8 @@
         <app-sidenav (minimizeSidenav)="toggleMinimizeSideNav($any($event))"></app-sidenav>
     </mat-sidenav>
 
-    <mat-sidenav-content>
-        <app-topnav (openSidenavEvent)="openSidenav()" (closeSidenavEvent)="closeSidenav()">
+    <mat-sidenav-content class="h100">
+        <app-topnav (openSidenavEvent)="openSidenav()" (closeSidenavEvent)="closeSidenav()" [minimizeSidenav]="minimizeSideNav">
         </app-topnav>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
