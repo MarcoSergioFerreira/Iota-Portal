@@ -1,0 +1,29 @@
+.sidenav {
+
+    &__list-item {
+        // width: 100%;
+        // color: lightgreen;
+        // background-color: purple;
+    }
+
+    &__icon {
+
+        &:hover {
+            border-radius: 4px !important;
+            background-color: blue !important;
+            cursor: pointer !important;
+
+            &::ng-deep.mat-icon {
+                color: white !important;
+            }
+        }
+    }
+
+    &__logo {
+        width: 60px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

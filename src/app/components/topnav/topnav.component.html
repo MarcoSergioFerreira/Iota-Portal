@@ -1,0 +1,13 @@
+<mat-toolbar-row class="topnav" fxLayout=row fxLayoutAlign="space-around center">
+    
+    <!-- Logo -->
+    <img class="topnav__logo" src="../../../assets/images/iota-logo.png" alt="Iota Investment Services">
+
+    <!-- menu items -->
+    <div fxFlex=70 fxLayout=row fxLayoutAlign=space-between>
+        <span routerLink="/dealing-instructions"><a>Dealing Instructions</a></span>
+    </div>
+
+    <!-- Log out button -->
+    <button (click)="logout()">Log out <mat-icon>logout</mat-icon></button>
+</mat-toolbar-row>

@@ -1,2 +1,17 @@
 
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav__container" (backdropClick)="closeSidenav()" [autosize]="autosize">
+    <mat-sidenav #snav 
+        ngClass.lt-md="w100"
+        (mobileQuery.matches)="mode = 'side'"
+        [mode]="(mediaQueryService.isMobile$ | async) || (mediaQueryService.isTablet$ | async) ? 'over' : 'side'"
+        [opened]="navbarService.showSidenav$ | async"
+        (keydown.escape)="closeSidenav()">
+        <app-sidenav (minimizeSidenav)="toggleMinimizeSideNav($any($event))"></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-topnav (openSidenavEvent)="openSidenav()" (closeSidenavEvent)="closeSidenav()">
+        </app-topnav>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
